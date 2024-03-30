@@ -61,3 +61,13 @@ newversion(1,"abc                                                               
 print()
 print("newversion()example 2")
 newversion(2,"abc                                                                                        def  geh"))
+
+"""Outputs:
+newversion()example1
+abc
+def
+geh
+
+newversion()example 2
+abc
+def  geh"""
