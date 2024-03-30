@@ -56,8 +56,8 @@ def newversion(thresh,word):
             break
 
     print(word)
-print("example 1")
-newversion(1,"""abc                                                                         def                                                                                    g   h i""")
+print("newversion()example1")
+newversion(1,"abc                                                                                        def  geh")
 print()
-print("example 2")
-newversion(5,"""abc                                                                         def                                                                                    g   h i""")
+print("newversion()example 2")
+newversion(2,"abc                                                                                        def  geh"))
