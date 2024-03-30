@@ -9,6 +9,6 @@ Function 2: `newversion(thresh, word)`
 
 The newversion function is an enhancement of the replinebreak function, providing additional flexibility by allowing the caller to specify a threshold value (thresh) for consecutive spaces.
 This threshold value determines the minimum length of consecutive spaces required to trigger a replacement with a newline escape character (\n).
-It iterates through the input string (word) and replaces any consecutive chain of spaces longer than the specified threshold with a newline character.
+It iterates through the input string (word) and replaces any consecutive chain of spaces greater than or equal to the specified threshold with a newline character.
 By specifying a threshold, users can customize the behavior of the function based on their specific requirements for text alignment and formatting.
 This enhanced version is particularly useful in scenarios where varying degrees of spacing are acceptable or desired, offering finer control over line breaks in the output.
