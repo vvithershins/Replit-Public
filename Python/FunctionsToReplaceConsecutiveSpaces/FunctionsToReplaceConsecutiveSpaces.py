@@ -44,7 +44,7 @@ def newversion(thresh,word):
                 if char == " ":
                     end = index
                 else:
-                    if end - pos >= int(thresh):  # Check if the difference between pos and end is greater than 1
+                    if ((end - pos) +1) > int(thresh):  # Check if the difference between pos and end is greater than 1
                         replaced_text = "\n" + word[end:].lstrip()  # Remove leading spaces after newline insertion
                         word = word[:pos] + replaced_text
                         replaced = True
