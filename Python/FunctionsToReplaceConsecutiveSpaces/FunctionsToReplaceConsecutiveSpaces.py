@@ -60,17 +60,17 @@ def newversion(thresh,word):
 
     print(word)
 print("newversion()example1")
-newversion(1,"abc                                                                                        def  geh")
+newversion(1,"abc                                                                                        def  ghi")
 print()
 print("newversion()example 2")
-newversion(2,"abc                                                                                        def  geh"))
+newversion(2,"abc                                                                                        def  ghi"))
 
 #Outputs:
 #newversion() example 1
 #abc
 #def
-#geh
+#ghi
 
 #newversion() example 2
 #abc
-#def  geh
+#def  ghi
