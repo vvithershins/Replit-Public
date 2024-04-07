@@ -2,6 +2,11 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 from tkinter.scrolledtext import ScrolledText
 from datetime import datetime
+import pytz
+
+#Customize the default_timezone to your timezone.
+default_timezone = pytz.timezone('America/New_York')
+
 
 # Function to save the journal entry
 def save_entry():
@@ -30,13 +35,13 @@ def save_entry():
             file.write(f"Entry:\n{entry['Entry']}\n\n")
 
     messagebox.showinfo("Success", "Journal entry saved successfully.")
-    
+
 # Function to create a new journal entry
 def new_entry():
     title_entry.delete(0, tk.END)
     text_editor.delete("1.0", tk.END)
     date_entry.delete(0, tk.END)
-    date_entry.insert(tk.END, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    date_entry.insert(tk.END, datetime.now(default_timezone).strftime("%Y-%m-%d %H:%M:%S"))
 
 # Function to view past journal entries
 def view_entries():
@@ -109,7 +114,7 @@ date_label = tk.Label(window, text="Date/Time:")
 date_label.grid(row=0, column=0, padx=5, pady=5)
 date_entry = tk.Entry(window)
 date_entry.grid(row=0, column=1, padx=5, pady=5)
-date_entry.insert(tk.END, datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+date_entry.insert(tk.END, datetime.now(default_timezone).strftime("%Y-%m-%d %H:%M:%S"))
 
 title_label = tk.Label(window, text="Title:")
 title_label.grid(row=1, column=0, padx=5, pady=5)
