@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Tone Gradient Voting</title>
+    <style>
+        /* Gradient slider styles */
+        #skinToneSlider {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #fcd6a4 0%, #e0bb95 15%, #d2a488 30%, #b7775e 50%, #8e5635 70%, #5c3e2e 85%, #2e1e0f 100%);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        /* Slider thumb style */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ffffff; /* Set background color of slider thumb */
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            margin-top: -5px; /* Adjust thumb position to overlay on slider */
+        }
+        /* Slider thumb style */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ffffff; /* Set background color of slider thumb */
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            margin-top: -5px; /* Adjust thumb position to overlay on slider */
+        }
+        /* Hide default range input */
+        input[type="range"]::-moz-range-thumb {
+            display: none;
+        }
+
+        /* Update selected skin tone display */
+        #selectedSkinTone {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Skin Tone Gradient Voting</h1>
+      <div id="skinToneSlider">
+          <input type="range" min="0" max="100" value="50" id="skinToneRange">
+      </div>
+      <p>Selected Skin Tone: <span id="selectedSkinTone">50%</span></p>
+      <button id="voteBtn">Vote</button>
+  
+      <script>
+          // JavaScript code for handling slider and voting
+        document.addEventListener('DOMContentLoaded', function() {
+            const skinToneRange = document.getElementById('skinToneRange');
+            const selectedSkinTone = document.getElementById('selectedSkinTone');
+            const voteBtn = document.getElementById('voteBtn');
+
+            // Update selected skin tone display
+            skinToneRange.addEventListener('input', function() {
+                selectedSkinTone.innerText = `${this.value}%`;
+            });
+
+            // Add event listener to handle voting button click
+            voteBtn.addEventListener('click', function() {
+                const voteValue = skinToneRange.value;
+                // Send AJAX request to Flask server to submit vote
+                fetch('/vote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `vote=${voteValue}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Vote submitted successfully!');
+                    } else {
+                        alert('Failed to submit vote.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to submit vote.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
