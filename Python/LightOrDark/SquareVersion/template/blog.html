@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Voting App</title>
+  <style>
+    .square {
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Voting App</h1>
+  <p>Which square is darker?</p>
+  <form action="/vote" method="get">
+    <label for="color1"><input type="radio" name="color" value="one"> one</label>
+    <div class="square" style="background-color: #A76C49;"></div>
+    <label for="color2"><input type="radio" name="color" value="two"> two</label>
+    <div class="square" style="background-color: #9D6327;"></div>
+    <br>
+    <input type="radio" name="color" value="neither">or I can't tell</label><br>
+    <input type="submit" value="Vote">
+    
+  </form>
+</body>
+</html>
