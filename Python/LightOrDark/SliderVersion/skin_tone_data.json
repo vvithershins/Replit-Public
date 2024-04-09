@@ -1,0 +1,10 @@
+{
+    "skin_tones": [
+        {"value": 0, "color": "#ffffff"},
+        {"value": 20, "color": "#ffffff"},
+        {"value": 40, "color": "#ffffff"},
+        {"value": 60, "color": "#ffffff"},
+        {"value": 80, "color": "#ffffff"},
+        {"value": 100, "color": "#ffffff"}
+    ]
+}
