@@ -11,6 +11,8 @@ def super_split(text,sep,max):
     final = how.split(" ")#uses non breaking space alt numpad 254
     
   elif max > 0:
+    if max > text.count(sep):
+      max = text.count(sep)
     final = text.split(sep,max)
     
   else:
