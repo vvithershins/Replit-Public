@@ -52,6 +52,8 @@ while True:
     syst = input("Which system is it installed on?\n➡️ ").strip().upper()
     prlvl = int(input("Enter priority level low 1-5 high\n➡️ "))
     last = input("When did you last play\n➡️ ")
+    if last == "":
+      last = "00/00/0000"
     rawtime = datetime.datetime.now(mytz)
     addtime = rawtime.strftime("%m/%d/%Y %H:%M:%S")
     games[addGame] = {"System" : syst, "Priority" : prlvl, "Last Played" : last, "Date Added" : addtime}
