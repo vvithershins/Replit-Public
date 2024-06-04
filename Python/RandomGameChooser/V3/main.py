@@ -62,7 +62,7 @@ while True:
   #Select
   elif menu == "S" or menu == "2":
     def form():
-      format = f"""\033[32mGame        : {sel.upper()}
+      format = f"""\033[32mGame        : {sel}
 \033[35mSystem      : {games[sel]["System"].upper()}
 \033[91mPriority    : {games[sel]["Priority"]}
 \033[93mLast Played : {games[sel]["Last Played"]}
@@ -184,7 +184,7 @@ while True:
     time.sleep(1)
     os.system("clear")
     for game in games:
-      format = f"""\033[32mGame        : {game.capitalize()}
+      format = f"""\033[32mGame        : {game}
 \033[35mSystem      : {games[game]["System"].upper()}
 \033[91mPriority    : {games[game]["Priority"]}
 \033[93mLast Played : {games[game]["Last Played"]}
