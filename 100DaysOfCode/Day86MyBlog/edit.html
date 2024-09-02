@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/static/style.css"
+  </head>
+</html>
+<body>
+  <h1>My Blog</h1>
+  <button type ="button" onClick="location.href='/logout'">Logout</button>
+  <form method="post" action="/add">
+    <p>Title: <input type="text" name ="title"></p>
+    <p>Date : <input type="date" name = "date"></p>
+    <p>Time : <input type="time" name = "time"></p>
+    <p>Body Text: <input type="text" name="body"></p>
+    <button type ="submit">Save</button>
+    <hr>
+  {content}
+</body>
